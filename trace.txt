@@ -1,0 +1,88 @@
+execve("./program", ["./program", "8", "100000000"], 0x7ffe93aa74a0 /* 68 vars */) = 0
+newfstatat(AT_FDCWD, "/etc/ld.so.cache", {st_mode=S_IFREG|0644, st_size=130495, ...}, 0) = 0
+openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+fstat(3, {st_mode=S_IFREG|0644, st_size=130495, ...}) = 0
+mmap(NULL, 130495, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7fdf0bc96000
+close(3)                                = 0
+brk(NULL)                               = 0x562948ce2000
+mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fdf0bc94000
+access("/etc/ld.so.preload", R_OK)      = -1 ENOENT (Нет такого файла или каталога)
+newfstatat(AT_FDCWD, "/etc/ld.so.cache", {st_mode=S_IFREG|0644, st_size=130495, ...}, 0) = 0
+openat(AT_FDCWD, "/usr/lib/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\300y\2\0\0\0\0\0"..., 1024) = 1024
+fstat(3, {st_mode=S_IFREG|0755, st_size=2215072, ...}) = 0
+mmap(NULL, 2239312, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7fdf0ba00000
+mmap(0x7fdf0ba24000, 1552384, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x24000) = 0x7fdf0ba24000
+mmap(0x7fdf0bb9f000, 483328, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x19f000) = 0x7fdf0bb9f000
+mmap(0x7fdf0bc15000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x214000) = 0x7fdf0bc15000
+mmap(0x7fdf0bc1b000, 31568, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7fdf0bc1b000
+close(3)                                = 0
+mmap(NULL, 12288, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fdf0bc91000
+arch_prctl(ARCH_SET_FS, 0x7fdf0bc91740) = 0
+set_tid_address(0x7fdf0bc91d68)         = 5065
+set_robust_list(0x7fdf0bc91a20, 24)     = 0
+rseq({cpu_id_start=0, cpu_id=RSEQ_CPU_ID_UNINITIALIZED, rseq_cs=NULL, flags=0, node_id=0, mm_cid=0, slice_ctrl={request=0, granted=0, __reserved=0}, __reserved=0}, 33, 0, 0x53053053) = 0
+getrandom("\x9d\x9f\x9d\x0c\xd5\xb9\xe4\x5b\x4f\x9a\x5e\x30\x84\x59\x94\xfe", 16, GRND_NONBLOCK) = 16
+mprotect(0x7fdf0bc15000, 16384, PROT_READ) = 0
+mprotect(0x562917f21000, 4096, PROT_READ) = 0
+mprotect(0x7fdf0bcfb000, 8192, PROT_READ) = 0
+prlimit64(0, RLIMIT_STACK, NULL, {rlim_cur=8192*1024, rlim_max=RLIM64_INFINITY}) = 0
+getrandom("\x64\xe3\x6a\xea\x5e\xc6\x05\x16", 8, GRND_NONBLOCK) = 8
+fstat(1, {st_mode=S_IFCHR|0600, st_rdev=makedev(0x88, 0), ...}) = 0
+brk(NULL)                               = 0x562948ce2000
+brk(0x562948d03000)                     = 0x562948d03000
+write(1, "Threads: 8\n", 11)            = 11
+write(1, "Simulations: 100000000\n", 23) = 23
+rt_sigaction(SIGRT_1, {sa_handler=0x7fdf0ba95620, sa_mask=[], sa_flags=SA_RESTORER|SA_ONSTACK|SA_RESTART|SA_SIGINFO, sa_restorer=0x7fdf0ba3e6f0}, NULL, 8) = 0
+rt_sigprocmask(SIG_UNBLOCK, [RTMIN RT_1], NULL, 8) = 0
+mmap(NULL, 8392704, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_STACK, -1, 0) = 0x7fdf0b1ff000
+madvise(0x7fdf0b1ff000, 4096, MADV_GUARD_INSTALL) = 0
+rt_sigprocmask(SIG_BLOCK, ~[], [], 8)   = 0
+clone3({flags=CLONE_VM|CLONE_FS|CLONE_FILES|CLONE_SIGHAND|CLONE_THREAD|CLONE_SYSVSEM|CLONE_SETTLS|CLONE_PARENT_SETTID|CLONE_CHILD_CLEARTID, child_tid=0x7fdf0b9ffce8, parent_tid=0x7fdf0b9ff990, exit_signal=0, stack=0x7fdf0b1ff000, stack_size=0x7fff80, tls=0x7fdf0b9ff6c0} => {parent_tid=[5066]}, 88) = 5066
+rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
+mmap(NULL, 8392704, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_STACK, -1, 0) = 0x7fdf0a9fe000
+madvise(0x7fdf0a9fe000, 4096, MADV_GUARD_INSTALL) = 0
+rt_sigprocmask(SIG_BLOCK, ~[], [], 8)   = 0
+clone3({flags=CLONE_VM|CLONE_FS|CLONE_FILES|CLONE_SIGHAND|CLONE_THREAD|CLONE_SYSVSEM|CLONE_SETTLS|CLONE_PARENT_SETTID|CLONE_CHILD_CLEARTID, child_tid=0x7fdf0b1fece8, parent_tid=0x7fdf0b1fe990, exit_signal=0, stack=0x7fdf0a9fe000, stack_size=0x7fff80, tls=0x7fdf0b1fe6c0} => {parent_tid=[5067]}, 88) = 5067
+rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
+mmap(NULL, 8392704, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_STACK, -1, 0) = 0x7fdf0a1fd000
+madvise(0x7fdf0a1fd000, 4096, MADV_GUARD_INSTALL) = 0
+rt_sigprocmask(SIG_BLOCK, ~[], [], 8)   = 0
+clone3({flags=CLONE_VM|CLONE_FS|CLONE_FILES|CLONE_SIGHAND|CLONE_THREAD|CLONE_SYSVSEM|CLONE_SETTLS|CLONE_PARENT_SETTID|CLONE_CHILD_CLEARTID, child_tid=0x7fdf0a9fdce8, parent_tid=0x7fdf0a9fd990, exit_signal=0, stack=0x7fdf0a1fd000, stack_size=0x7fff80, tls=0x7fdf0a9fd6c0} => {parent_tid=[5068]}, 88) = 5068
+rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
+mmap(NULL, 8392704, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_STACK, -1, 0) = 0x7fdf099fc000
+madvise(0x7fdf099fc000, 4096, MADV_GUARD_INSTALL) = 0
+rt_sigprocmask(SIG_BLOCK, ~[], [], 8)   = 0
+clone3({flags=CLONE_VM|CLONE_FS|CLONE_FILES|CLONE_SIGHAND|CLONE_THREAD|CLONE_SYSVSEM|CLONE_SETTLS|CLONE_PARENT_SETTID|CLONE_CHILD_CLEARTID, child_tid=0x7fdf0a1fcce8, parent_tid=0x7fdf0a1fc990, exit_signal=0, stack=0x7fdf099fc000, stack_size=0x7fff80, tls=0x7fdf0a1fc6c0} => {parent_tid=[5069]}, 88) = 5069
+rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
+mmap(NULL, 8392704, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_STACK, -1, 0) = 0x7fdf091fb000
+madvise(0x7fdf091fb000, 4096, MADV_GUARD_INSTALL) = 0
+rt_sigprocmask(SIG_BLOCK, ~[], [], 8)   = 0
+clone3({flags=CLONE_VM|CLONE_FS|CLONE_FILES|CLONE_SIGHAND|CLONE_THREAD|CLONE_SYSVSEM|CLONE_SETTLS|CLONE_PARENT_SETTID|CLONE_CHILD_CLEARTID, child_tid=0x7fdf099fbce8, parent_tid=0x7fdf099fb990, exit_signal=0, stack=0x7fdf091fb000, stack_size=0x7fff80, tls=0x7fdf099fb6c0} => {parent_tid=[5070]}, 88) = 5070
+rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
+mmap(NULL, 8392704, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_STACK, -1, 0) = 0x7fdf089fa000
+madvise(0x7fdf089fa000, 4096, MADV_GUARD_INSTALL) = 0
+rt_sigprocmask(SIG_BLOCK, ~[], [], 8)   = 0
+clone3({flags=CLONE_VM|CLONE_FS|CLONE_FILES|CLONE_SIGHAND|CLONE_THREAD|CLONE_SYSVSEM|CLONE_SETTLS|CLONE_PARENT_SETTID|CLONE_CHILD_CLEARTID, child_tid=0x7fdf091face8, parent_tid=0x7fdf091fa990, exit_signal=0, stack=0x7fdf089fa000, stack_size=0x7fff80, tls=0x7fdf091fa6c0} => {parent_tid=[5071]}, 88) = 5071
+rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
+mmap(NULL, 8392704, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_STACK, -1, 0) = 0x7fdf081f9000
+madvise(0x7fdf081f9000, 4096, MADV_GUARD_INSTALL) = 0
+rt_sigprocmask(SIG_BLOCK, ~[], [], 8)   = 0
+clone3({flags=CLONE_VM|CLONE_FS|CLONE_FILES|CLONE_SIGHAND|CLONE_THREAD|CLONE_SYSVSEM|CLONE_SETTLS|CLONE_PARENT_SETTID|CLONE_CHILD_CLEARTID, child_tid=0x7fdf089f9ce8, parent_tid=0x7fdf089f9990, exit_signal=0, stack=0x7fdf081f9000, stack_size=0x7fff80, tls=0x7fdf089f96c0} => {parent_tid=[5072]}, 88) = 5072
+rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
+mmap(NULL, 8392704, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_STACK, -1, 0) = 0x7fdeeb7ff000
+madvise(0x7fdeeb7ff000, 4096, MADV_GUARD_INSTALL) = 0
+rt_sigprocmask(SIG_BLOCK, ~[], [], 8)   = 0
+clone3({flags=CLONE_VM|CLONE_FS|CLONE_FILES|CLONE_SIGHAND|CLONE_THREAD|CLONE_SYSVSEM|CLONE_SETTLS|CLONE_PARENT_SETTID|CLONE_CHILD_CLEARTID, child_tid=0x7fdeebfffce8, parent_tid=0x7fdeebfff990, exit_signal=0, stack=0x7fdeeb7ff000, stack_size=0x7fff80, tls=0x7fdeebfff6c0} => {parent_tid=[5073]}, 88) = 5073
+rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
+futex(0x7fdf0b9ffce8, FUTEX_WAIT_BITSET|FUTEX_CLOCK_REALTIME, 2, NULL, FUTEX_BITSET_MATCH_ANY) = 0
+futex(0x7fdf0a1fcce8, FUTEX_WAIT_BITSET|FUTEX_CLOCK_REALTIME, 2, NULL, FUTEX_BITSET_MATCH_ANY) = 0
+munmap(0x7fdf0b1ff000, 8392704)         = 0
+munmap(0x7fdf0a9fe000, 8392704)         = 0
+munmap(0x7fdf0a1fd000, 8392704)         = 0
+futex(0x7fdeebfffce8, FUTEX_WAIT_BITSET|FUTEX_CLOCK_REALTIME, 2, NULL, FUTEX_BITSET_MATCH_ANY) = 0
+munmap(0x7fdf099fc000, 8392704)         = 0
+write(1, "Succecful simulations: 5878970/1"..., 41) = 41
+write(1, "Succes probability: 0.058790\n", 29) = 29
+exit_group(0)                           = ?
++++ exited with 0 +++
